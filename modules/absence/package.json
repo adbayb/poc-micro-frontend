@@ -1,0 +1,27 @@
+{
+  "private": "true",
+  "name": "module-absence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "start": "webpack serve --config webpack.config.dev.js --open",
+    "prebuild": "yarn clean",
+    "build": "webpack --config webpack.config.prod.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "17.0.36",
+    "@types/react-dom": "17.0.11",
+    "html-webpack-plugin": "5.5.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "ts-loader": "9.2.6",
+    "webpack": "5.64.2",
+    "webpack-cli": "4.9.1",
+    "webpack-dev-server": "4.5.0"
+  }
+}

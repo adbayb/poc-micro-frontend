@@ -1,0 +1,53 @@
+{
+  "private": true,
+  "name": "poc-module-federation",
+  "version": "0.0.0",
+  "workspaces": [
+    "shell",
+    "modules/*",
+    "libs/*"
+  ],
+  "author": {
+    "name": "Ayoub Adib",
+    "email": "adbayb@gmail.com",
+    "url": "https://twitter.com/adbayb"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:adbayb/poc-module-federation.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "lerna run start --parallel",
+    "verify": "yarn lint & tsc --noEmit",
+    "fix": "yarn lint --fix",
+    "lint": "eslint . --ignore-path .gitignore",
+    "format": "prettier . --ignore-path .gitignore --ignore-path .prettierignore --write"
+  },
+  "prettier": "@adbayb/prettier-config",
+  "eslintConfig": {
+    "extends": "@adbayb"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "yarn lint"
+    ],
+    "**/*.{json,md,mdx,html,css}": [
+      "yarn format"
+    ]
+  },
+  "devDependencies": {
+    "@adbayb/eslint-config": "0.9.0",
+    "@adbayb/prettier-config": "0.9.0",
+    "@adbayb/ts-config": "0.9.0",
+    "eslint": "8.3.0",
+    "lerna": "4.0.0",
+    "prettier": "2.4.1",
+    "typescript": "4.5.2"
+  }
+}
