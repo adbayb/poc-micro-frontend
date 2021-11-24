@@ -1,10 +1,10 @@
-import { Absence } from "./ModuleEntrypoint";
+import { StrictMode } from "react";
+import View from "./View";
 
-export const App = () => (
-	<main>
-		<h1>
-			Dev skeleton (not used shell side in constrast to Absence component)
-		</h1>
-		<Absence />
-	</main>
+const App = () => (
+	<StrictMode>
+		<View />
+	</StrictMode>
 );
+
+export default App;

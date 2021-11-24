@@ -1,7 +1,7 @@
 {
-    "extends": "@adbayb",
-    "rules": {
-        "@typescript-eslint/ban-ts-comment": "off",
-        "import/no-self-import": "off"
-    }
+	"extends": "@adbayb",
+	"rules": {
+		"@typescript-eslint/ban-ts-comment": "off",
+		"import/no-default-export": "off"
+	}
 }

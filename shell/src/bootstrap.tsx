@@ -1,4 +1,13 @@
-import * as ReactDOM from "react-dom";
-import { App } from "./App";
+import ReactDOM from "react-dom";
+import { StrictMode } from "react";
+import { SharedProvider } from "@shared/context";
+import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+	<StrictMode>
+		<SharedProvider>
+			<App />
+		</SharedProvider>
+	</StrictMode>,
+	document.getElementById("root")
+);

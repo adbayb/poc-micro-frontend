@@ -1,13 +1,20 @@
-import { lazy, Suspense } from "react";
+import React from "react";
+//@ts-ignore
+import AbsenceView from "absence/View";
+import { useSharedContext } from "@shared/context";
 
-// @ts-expect-error
-const RemoteAbsence = lazy(() => import("absence/ModuleEntrypoint"));
+const App = () => {
+	const context = useSharedContext();
 
-export const App = () => (
-	<main>
-		<h1>Hello world</h1>
-        <Suspense fallback="Loading...">
-		    <RemoteAbsence />
-        </Suspense>
-	</main>
-);
+	return (
+		<main>
+			<h1>Shell</h1>
+			<p>Shared value = {context.value}</p>
+			<React.Suspense fallback="Loading modules...">
+				<AbsenceView />
+			</React.Suspense>
+		</main>
+	);
+};
+
+export default App;

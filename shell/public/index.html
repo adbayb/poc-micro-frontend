@@ -1,10 +1,85 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Module federation</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+	<head>
+		<script src="http://localhost:3001/remoteEntry.js"></script>
+		<style>
+			html,
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+					Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+					"Segoe UI Emoji", "Segoe UI Symbol";
+				font-size: 14px;
+				/* Line height value taken from normalize.css */
+				line-height: 1.15;
+				-webkit-font-smoothing: antialiased;
+				-webkit-tap-highlight-color: transparent;
+				-moz-osx-font-smoothing: grayscale;
+				background-color: #f7f9fc;
+				color: #042040;
+				margin: 24px 48px;
+			}
+			/* Set core body defaults */
+			body {
+				min-height: 100vh;
+				scroll-behavior: smooth;
+				text-rendering: optimizeSpeed;
+				-webkit-text-size-adjust: 100%;
+			}
+			/* Box sizing rules */
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+			/* Remove default margin */
+			h1,
+			h2,
+			h3,
+			h4,
+			ul[class],
+			ol[class],
+			li,
+			figure,
+			figcaption,
+			blockquote,
+			dl,
+			dd {
+				margin: 0;
+			}
+			/* Remove list styles on ul and ol elements */
+			ul,
+			ol {
+				list-style: none;
+			}
+			/* Make images easier to work with */
+			img {
+				max-width: 100%;
+				display: block;
+			}
+			svg:not(:root) {
+				overflow: visible;
+			}
+			a {
+				text-decoration: none;
+			}
+			table {
+				border-spacing: 0;
+			}
+			iframe {
+				border: 0;
+			}
+			.material-icons {
+				flex-shrink: 0;
+			}
+			/* Inherit fonts for inputs and buttons */
+			input,
+			button,
+			textarea,
+			select {
+				font: inherit;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+	</body>
 </html>

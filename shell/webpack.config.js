@@ -1,39 +1,56 @@
-const { ModuleFederationPlugin } = require("webpack").container;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const pkg = require("./package.json");
+const { ModuleFederationPlugin } = require("webpack").container;
+const path = require("path");
+const pkgDependencies = require("./package.json").dependencies;
 
 module.exports = {
 	entry: "./src/index.ts",
+	devServer: {
+		static: path.join(__dirname, "dist"),
+		port: 3000,
+		liveReload: true,
+		hot: true,
+	},
 	output: {
-		filename: "main.js",
+		publicPath: "http://localhost:3000/",
 	},
 	resolve: {
 		extensions: [".ts", ".tsx", ".js"],
 	},
 	module: {
-		rules: [{ test: /\.tsx?$/, loader: "ts-loader" }],
+		rules: [
+			{
+				test: /\.(jsx?|tsx?)$/,
+				loader: "ts-loader",
+				exclude: /node_modules/,
+			},
+		],
 	},
 	plugins: [
 		new ModuleFederationPlugin({
-			name: "shell",
+			name: "container",
+			library: { type: "var", name: "container" },
 			remotes: {
-				absence: "absence@http://localhost:9100/remoteEntry.js",
+				absence: "absence",
 			},
 			shared: {
+				// ...pkgDependencies,
 				react: {
 					singleton: true,
-					eager: true,
-					requiredVersion: pkg.devDependencies.react,
+					requiredVersion: pkgDependencies.react,
 				},
 				"react-dom": {
 					singleton: true,
-					eager: true,
-					requiredVersion: pkg.devDependencies["react-dom"],
+					requiredVersion: pkgDependencies["react-dom"],
+				},
+				"@shared/context": {
+					singleton: true,
+					requiredVersion: pkgDependencies["@shared/context"],
 				},
 			},
 		}),
 		new HtmlWebpackPlugin({
-			template: "public/index.html",
+			template: "./public/index.html",
 		}),
 	],
 };
