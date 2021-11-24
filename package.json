@@ -19,7 +19,7 @@
 	"license": "MIT",
 	"scripts": {
 		"clean": "lerna run clean --parallel",
-		"start": "lerna run start --parallel",
+		"start": "lerna run build --scope @shared/context && lerna run start --parallel",
 		"build": "lerna run build",
 		"serve": "lerna run serve --parallel",
 		"verify": "yarn lint & tsc --noEmit",

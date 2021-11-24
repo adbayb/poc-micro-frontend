@@ -10,16 +10,16 @@ const View = () => {
 				flexDirection: "column",
 				alignItems: "center",
 				justifyContent: "center",
-				backgroundColor: "#FFEED1",
+				backgroundColor: "#B4D5FA",
 				borderRadius: 4,
 				minWidth: 300,
 				flexGrow: 1,
 				padding: 16,
 			}}
 		>
-			<p>Hello from Absence module</p>
-			<button onClick={() => context.increment()}>
-				Increment shared value ({context.value})
+			<p>Hello from Expense module</p>
+			<button onClick={() => context.decrement()}>
+				Decrement shared value ({context.value})
 			</button>
 		</div>
 	);

@@ -7,12 +7,12 @@ module.exports = {
 	entry: "./src/index.ts",
 	devServer: {
 		static: path.join(__dirname, "dist"),
-		port: 3000,
-		liveReload: true,
+		port: 3002,
 		hot: true,
+		liveReload: true,
 	},
 	output: {
-		publicPath: "http://localhost:3000/",
+		publicPath: "http://localhost:3002/",
 	},
 	resolve: {
 		extensions: [".ts", ".tsx", ".js"],
@@ -28,13 +28,15 @@ module.exports = {
 	},
 	plugins: [
 		new ModuleFederationPlugin({
-			name: "container",
-			library: { type: "var", name: "container" },
-			remotes: {
-				absence: "absence",
-				expense: "expense",
+			name: "expense",
+			library: { type: "var", name: "expense" },
+			filename: "remoteEntry.js",
+			exposes: {
+				// @note: expose remote assets
+				"./View": "./src/View",
 			},
 			shared: {
+				// @note: defines share dependency across modules
 				// ...pkgDependencies,
 				react: {
 					singleton: true,
