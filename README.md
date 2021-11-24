@@ -19,6 +19,6 @@ This is often known as Micro-Frontends, but is not limited to that.
 
 ## Structure
 
--   (./shell/\*)[./shell]: The app shell is the minimal HTML, CSS and JavaScript required to power the user interface (webpack dependent). The [Webpack documentation](https://webpack.js.org/concepts/module-federation/#low-level-concepts) references it as the container / "local module".
--   (./modules/\*)[./modules]: A module is a remote vertical consumable by the shell (webpack dependent). The [Webpack documentation](https://webpack.js.org/concepts/module-federation/#low-level-concepts) references it as a "remote module".
--   (./shared/\*)[./shared]: Libraries shared between shell and verticals (webpack independent).
+-   [./shell/\*](./shell): The app shell is the minimal HTML, CSS and JavaScript required to power the user interface (webpack dependent). It's the main entrypoint scaffolding the application skeleton. The [Webpack documentation](https://webpack.js.org/concepts/module-federation/#low-level-concepts) references it as the container / "local module".
+-   [./modules/\*](./modules): A module is a remote vertical consumed by the shell (webpack dependent). The [Webpack documentation](https://webpack.js.org/concepts/module-federation/#low-level-concepts) references it as a "remote module". A remote module can also, in the same way as the shell, consumer other remote modules.
+-   [./shared/\*](./shared): Libraries shared across shell and verticals (webpack independent).

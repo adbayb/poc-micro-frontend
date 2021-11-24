@@ -13,11 +13,16 @@ type SharedContextValue = {
 	reset: () => void;
 };
 
+const standaloneModuleWarning = () =>
+	console.warn(
+		"Shared context is currently consumed without the app shell. The operation is not allowed in a standalone module."
+	);
+
 const SharedContext = createContext<SharedContextValue>({
 	value: 0,
-	increment() {},
-	decrement() {},
-	reset() {},
+	increment: standaloneModuleWarning,
+	decrement: standaloneModuleWarning,
+	reset: standaloneModuleWarning,
 });
 
 type SharedProviderProps = {

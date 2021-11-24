@@ -12,7 +12,7 @@ const View = () => {
 				justifyContent: "center",
 				backgroundColor: "#B4D5FA",
 				borderRadius: 4,
-				minWidth: 300,
+				maxWidth: 500,
 				flexGrow: 1,
 				padding: 16,
 			}}
