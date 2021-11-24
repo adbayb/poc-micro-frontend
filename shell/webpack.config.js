@@ -34,21 +34,13 @@ module.exports = {
 				absence: "absence",
 				expense: "expense",
 			},
-			shared: {
-				// ...pkgDependencies,
-				react: {
+			// @note: enforces share dependency between remote modules and shell
+			shared: ["react", "react-dom", "@shared/context"].map((name) => ({
+				[name]: {
 					singleton: true,
-					requiredVersion: pkgDependencies.react,
+					requiredVersion: pkgDependencies[name],
 				},
-				"react-dom": {
-					singleton: true,
-					requiredVersion: pkgDependencies["react-dom"],
-				},
-				"@shared/context": {
-					singleton: true,
-					requiredVersion: pkgDependencies["@shared/context"],
-				},
-			},
+			})),
 		}),
 		new HtmlWebpackPlugin({
 			template: "./public/index.html",
