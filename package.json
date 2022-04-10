@@ -1,12 +1,7 @@
 {
 	"private": true,
-	"name": "poc-module-federation",
+	"name": "poc-module-federation-monorepository",
 	"version": "0.0.0",
-	"workspaces": [
-		"shell",
-		"modules/*",
-		"shared/*"
-	],
 	"author": {
 		"name": "Ayoub Adib",
 		"email": "adbayb@gmail.com",
@@ -18,39 +13,27 @@
 	},
 	"license": "MIT",
 	"scripts": {
-		"clean": "lerna run clean --parallel",
-		"start": "lerna run build --scope @shared/context && lerna run start --parallel",
-		"build": "lerna run build",
-		"serve": "lerna run serve --parallel",
-		"verify": "yarn lint & tsc --noEmit",
-		"fix": "yarn lint --fix",
-		"lint": "eslint . --ignore-path .gitignore",
-		"format": "prettier . --ignore-path .gitignore --ignore-path .prettierignore --write"
+		"postinstall": "scripts setup",
+		"clean": "turbo run clean",
+		"verify": "turbo run verify",
+		"fix": "turbo run fix",
+		"test": "turbo run test",
+		"start": "turbo run start",
+		"build": "turbo run build",
+		"watch": "turbo run watch"
 	},
 	"prettier": "@adbayb/prettier-config",
 	"eslintConfig": {
 		"extends": "@adbayb"
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"**/*.{js,jsx,ts,tsx}": [
-			"yarn lint"
-		],
-		"**/*.{json,md,mdx,html,css}": [
-			"yarn format"
-		]
-	},
 	"devDependencies": {
-		"@adbayb/eslint-config": "0.9.0",
-		"@adbayb/prettier-config": "0.9.0",
-		"@adbayb/ts-config": "0.9.0",
-		"eslint": "8.3.0",
-		"lerna": "4.0.0",
-		"prettier": "2.4.1",
-		"typescript": "4.5.2"
+		"@adbayb/scripts": "0.14.0",
+		"@adbayb/eslint-config": "0.14.0",
+		"@adbayb/prettier-config": "0.14.0",
+		"@adbayb/ts-config": "0.14.0",
+		"eslint": "8.13.0",
+		"prettier": "2.6.2",
+		"turbo": "1.2.1",
+		"typescript": "4.6.3"
 	}
 }
