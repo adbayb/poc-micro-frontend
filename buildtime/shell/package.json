@@ -1,0 +1,22 @@
+{
+	"name": "shell",
+	"version": "0.0.0",
+	"private": true,
+	"source": "src/index.tsx",
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"start": "pnpm serve",
+		"build": "quickbundle build",
+		"watch": "quickbundle watch",
+		"serve": "quickbundle watch --serve public/index.html"
+	},
+	"dependencies": {
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"@shared/context": "workspace:*",
+		"module-absence": "workspace:*",
+		"module-expense": "workspace:*"
+	}
+}

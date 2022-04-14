@@ -1,0 +1,38 @@
+{
+	"private": true,
+	"name": "poc-module-federation-monorepository",
+	"version": "0.0.0",
+	"author": {
+		"name": "Ayoub Adib",
+		"email": "adbayb@gmail.com",
+		"url": "https://twitter.com/adbayb"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:adbayb/poc-module-federation.git"
+	},
+	"license": "MIT",
+	"scripts": {
+		"clean": "turbo run clean",
+		"verify": "turbo run verify",
+		"fix": "turbo run fix",
+		"test": "turbo run test",
+		"start": "turbo run start",
+		"build": "turbo run build",
+		"watch": "turbo run watch"
+	},
+	"prettier": "@adbayb/prettier-config",
+	"eslintConfig": {
+		"extends": "@adbayb"
+	},
+	"devDependencies": {
+		"@adbayb/scripts": "0.14.0",
+		"@adbayb/eslint-config": "0.14.0",
+		"@adbayb/prettier-config": "0.14.0",
+		"@adbayb/ts-config": "0.14.0",
+		"eslint": "8.13.0",
+		"prettier": "2.6.2",
+		"turbo": "1.2.1",
+		"typescript": "4.6.3"
+	}
+}

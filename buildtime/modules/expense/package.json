@@ -1,0 +1,28 @@
+{
+	"name": "module-expense",
+	"version": "0.0.0",
+	"private": true,
+	"source": "src/index.ts",
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"start": "pnpm watch",
+		"build": "quickbundle build",
+		"watch": "quickbundle watch",
+		"serve": "quickbundle watch --serve public/index.html"
+	},
+	"peerDependencies": {
+	  "react": "^16.14.0 || ^17.0.0",
+	  "react-dom": "^16.14.0 || ^17.0.0",
+	  "@shared/context": "workspace:^"
+	},
+	"devDependencies": {
+		"@types/react": "17.0.36",
+		"@types/react-dom": "17.0.11",
+		"typescript": "4.6.3",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"@shared/context": "workspace:*"
+	}
+}
