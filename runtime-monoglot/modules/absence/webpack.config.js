@@ -36,6 +36,14 @@ module.exports = {
 		],
 	},
 	plugins: [
+		/**
+		 * The plugin to configure module federation.
+		 * Some terminology useful to known when talking about Webpack Module federation:
+		 * - Host (aka the container or shell): A Webpack build that is initialized first during a page load
+		 * - Remote (aka the micro frontend): Another Webpack build, where part of it is being consumed by a host
+		 * - Bidirectional-hosts: configured to consume remote modules and be consumed as a remote module
+		 * - Omnidirectional-hosts: A host that behaves like a remote & host **at the same time at runtime**
+		 */
 		new ModuleFederationPlugin({
 			/**
 			 * The name of the micro frontend container (has no repercussion on the way MFE is served: dummy field?)
