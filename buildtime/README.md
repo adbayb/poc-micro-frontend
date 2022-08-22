@@ -1,7 +1,7 @@
 <br>
 <div align="center">
-    <h1>🧪 Micro frontend buildtime integration</h1>
-    <strong>This POC aims to showcase a buildtime integration with micro frontend resolved at buildtime (shell dependencies).</strong>
+    <h1>🧪 Micro-frontend buildtime integration</h1>
+    <strong>Build-time integration exploration (package-driven development).</strong>
 </div>
 <br>
 <br>

@@ -1,7 +1,7 @@
 <br>
 <div align="center">
-    <h1>🧪 Micro frontend runtime integration - single framework</h1>
-    <strong>This POC aims to test a micro frontend runtime integration with the <a href="https://webpack.js.org/concepts/module-federation">module federation building block</a>.</strong>
+    <h1>🧪 Micro-frontend runtime integration</h1>
+    <strong>Run-time integration exploration with single-spa and module federation building blocks</strong>
 </div>
 <br>
 <br>
