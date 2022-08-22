@@ -1,37 +1,44 @@
 <br>
 <div align="center">
     <h1>🧪 Micro frontends</h1>
-    <strong>This POC aims to test several approaches to tackle micro frontend architecture.</strong>
+    <strong>Micro-frontend architecture exploration</strong>
 </div>
 <br>
 <br>
 
 ## 🤔 Motivation
 
-Multiple separate builds should form a single application. These separate builds should not have dependencies between each other, so they can be developed and deployed individually.
-This is often known as Micro-Frontends, but is not limited to that.
+This repository aims to experiment and document several techniques to implement a micro-frontend architecture.
 
-To quote [micro-frontends.org](https://micro-frontends.org/):
+But before... what's the micro-frontend architecture?
 
-> "The idea behind Micro Frontends is to think about a website or web app as a composition of features which are owned by independent teams. Each team has a distinct area of business or mission it cares about and specialises in. A team is cross functional and develops its features end-to-end, from database to user interface."
+To quote [Martin Fowler blog](https://martinfowler.com/articles/micro-frontends.html):
+> Micro-frontend architecture can be defined as **an architectural style** where **independently deliverable** frontend applications are **composed into a greater whole**
 
-## 🎯 Objectives
+It provides guiding principles to decompose a front-end monolith into smaller applications (micro applications) that can be **developed**, **tested** and **deployed independently**, while still appearing to customers as a single cohesive product.
 
--   Independent deployment
--   Independent development: make it easier to work on a specific part of the application (disregarding the rest)
--   Easy state sharing between micro frontends
--   Easy code sharing between micro frontends
--   Smooth interaction between apps (it should feel like a SPA)
--   Reducing the size of the project you need to run locally
+At least, three principles should be kept in mind while building micro frontends:
+- **Boundary**: micro frontends have clear boundaries modeled around business domains with clear ownership to enable...
+- **Autonomy**: micro frontends are as autonomous as possible within their own boundaries to enable independent development and deployment. For that purpose, micro frontends must be loosely coupled (interact with each other only via a contract (API)) and must not impact the rest of the system (encapsulation & fault isolation) 
+- **Alignment**: micro frontends are orchestrated properly. The website must provide a consistent user experience by making sure that micro frontends are harmoniously composed to become a consistent whole at the end
 
-## 🧪 Experimentations
+*Please note that you'll often hear the not-so-truth microservice analogy: while both allow decoupled and independent codebases, there're some notable differences tied to the execution context. Indeed, by virtue of running within the browser, micro frontends result in different constraints. With this in mind, tech stack freedom level must be carefully assessed to not impact the user experience with a bloated application at the end.*
 
-Integration (or composition) between the container (aka shell here) and the micro frontends (aka modules here) is one of the main challenge. There's a natural architecture that arises across all the approaches: usually, there is a container application that renders common page elements, addresses cross-cutting concerns, and brings many micro frontends together on a page while informing the micro frontend where and when to render itself. Let's take a look at different micro frontend architecture composition approaches that can be used:
+## 🧪 Patterns
+
+Integration (or composition) between the container (aka shell here) and the micro frontends (aka modules here) is one of the main challenge. There's a natural architecture that arises across all the approaches: usually, there is a container application that renders common page elements, addresses cross-cutting concerns, and brings many micro frontends together on a page while informing the micro frontend where and when to render itself. 
+
+Let's take a look at different micro frontend architecture composition techniques that can be used:
 
 - [Build-time (or compile-time) composition](./buildtime): It consists of publishing each micro frontend as a package, and having the shell includes them all as library dependencies. It produces a single deployable Javascript bundle, as is usual, allowing us to de-duplicate common dependencies from our various applications. However, this approach means that we have to re-compile and release every single micro frontend in order to release a change to any individual part of the product. Just as with microservices, we've seen enough pain caused by such a lockstep release process that we would recommend strongly against this kind of approach to micro frontends. We should find a way to integrate our micro frontends at runtime, rather than at build-time.
 - [Run-time composition with monoglot framework](./runtime-monoglot): Integrates micro frontends at runtime (by integration, we mean mounting each micro frontend in the DOM and coordinating them). For this, several approaches could be done such as [iframe](https://martinfowler.com/articles/micro-frontends.html#Run-timeIntegrationViaIframes), [scripts](https://martinfowler.com/articles/micro-frontends.html#Run-timeIntegrationViaJavascript) or [web components](https://martinfowler.com/articles/micro-frontends.html#Run-timeIntegrationViaWebComponents) integration. Since we're using the same UI framework, we don't have interoperability constraints in contrast to a polyglot framework context. Consequently, web component integration is not necessary: we'll go with a script integration through Webpack and its module federation plugin.
 - [Run-time composition with polyglot frameworks](./run-time-polyglot): Same composition approach as the previous one but with a render shim on top of each polyglot micro frontend to guarantee interoperability between them. The interoperability layer could be implemented through a web component wrapper or a custom interface (for example, via single-spa router framework or via a custom function to abstract specific mounting operation for each micro frontend).
 - [Server-side composition](./serverside): In contrast to runtime like composition techniques, server side composition allows to assemble the markup of different micro frontends in the served page server side. It allows to achieve incredibly good first-page load speeds that are hard to match using pure client-side integration techniques and can be a requirement for applications with SEO constraints (crawling, indexing...). Please note, that this ingration is not mutually exclusive with runtime ones: server side rendering generally needs a rehydration step client side to attach event listeners and rebuilding the component tree. In this case, a runtime integration should be done as well client side to reconcialiate server rendered fragment during client hydration.
+
+TODO:
+- Linked application
+- Unified SPA
++ Pros/cons for each one
 
 
 ## 📦 Building blocks
@@ -42,9 +49,17 @@ Integration (or composition) between the container (aka shell here) and the micr
 
 ## 📕 Resources
 
-- [Overview](https://martinfowler.com/articles/micro-frontends.html)
-- [Architecture patterns](https://dev.to/okmttdhr/micro-frontends-architecture-patterns-introduction-3cpk)
-- [Micro frontends in action (book)](https://www.manning.com/books/micro-frontends-in-action)
-- [Article from the same book author](https://micro-frontends.org/)
-- [Module federation (optimization technique for micro frontends to share build-time modules/dependencies)](https://single-spa.js.org/)
-- [Single-spa (router/orchestrator for micro frontends to integrate at runtime build-time modules/dependencies without page reloading)](https://single-spa.js.org/)
+#### General
+- [Introduction (1/2)](https://martinfowler.com/articles/micro-frontends.html)
+- [Introduction (2/2)](https://micro-frontends.org/)
+- [Architectural patterns](https://dev.to/okmttdhr/micro-frontends-architecture-patterns-introduction-3cpk)
+- [Anti-patterns](https://javascript.plainenglish.io/four-micro-frontend-anti-patterns-58aaa9fe19d5)
+
+#### Tools & frameworks
+- [Module federation (or how to share dependencies and modules in an efficient way)](https://module-federation.github.io/)
+- [Single-spa (or how to orchestrate micro frontends)](https://single-spa.js.org/)
+
+#### Others
+- [A look at the micro frontend architecture trend](https://frontendmastery.com/posts/understanding-micro-frontends/)
+- [10 decision points for a micro-frontend approach](https://betterprogramming.pub/10-decision-points-for-micro-frontends-approach-4ebb4b59f40)
+- [Micro Frontend Architecture: The newest approach To building scalable frontend](https://www.simform.com/blog/micro-frontend-architecture/)
