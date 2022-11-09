@@ -1,6 +1,6 @@
 <br>
 <div align="center">
-    <h1>🧪 Micro-frontend buildtime integration</h1>
+    <h1>🧪 Micro-frontend build-time composition</h1>
     <strong>Build-time integration exploration (package-driven development).</strong>
 </div>
 <br>
