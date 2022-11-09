@@ -1,6 +1,6 @@
 <br>
 <div align="center">
-    <h1>🧪 Micro-frontend runtime integration</h1>
+    <h1>🧪 Micro-frontend client-side composition</h1>
     <strong>Run-time integration exploration with single-spa and module federation building blocks</strong>
 </div>
 <br>
