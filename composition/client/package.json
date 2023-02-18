@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "client-side-example",
+	"name": "@composition/client",
 	"version": "0.0.0",
 	"author": {
 		"name": "Ayoub Adib",

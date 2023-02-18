@@ -1,7 +1,6 @@
-<br>
 <div align="center">
-    <h1>🧪 Micro-frontend build-time composition</h1>
-    <strong>Build-time integration exploration (package-driven development).</strong>
+    <h2>👨‍🍳 Composition patterns</h2>
+    <strong>Build-time composition (package-driven integration)</strong>
 </div>
 <br>
 <br>
@@ -11,13 +10,19 @@
 1️⃣ Install by running:
 
 ```bash
+# With npm
+npm i
+# With pnpm
 pnpm i
 ```
 
 2️⃣ Try it by running:
 
 ```bash
+# With npm
 npm start
+# With pnpm
+pnpm start
 ```
 
 <br>
