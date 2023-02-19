@@ -41,11 +41,12 @@ As usual, it'll depend heavily on the operational context. Let's first start to 
 - Shell: The shell (or [container/host](https://webpack.js.org/concepts/module-federation/#low-level-concepts)) is the micro-frontend orchestrator component. Its responsibility is to welcome in the best possible conditions each micro frontend. It's a technical component only and must not contain any business logic.
 - Micro frontends: Self-contained modules (also [remote module](https://webpack.js.org/concepts/module-federation/#low-level-concepts)) consumed by the shell. It can have its own client-side routing and framework/libraries but can also share them with the shell/other modules.
 
-Implementing the micro frontend architecture comes with different challenges from splitting a monolith to fragment composition or linking experiences together, ... Those challenges have been categorized into four main patterns to follow:
+Implementing the micro frontend architecture comes with different challenges from splitting a monolith to fragment composition or linking experiences together, ... Those challenges can be solved with the help of several recipes that act like a blueprint and are categorized by their intent. These recipes are what we call micro-frontend **patterns** and we've identified, at least, four main classifications that aim to address the implementation (ordered from the micro-frontend journey beginning to the end):
 
 - [Boundary](./boundary)
 - [Composition](./composition)
 - [Routing](./routing)
+- [Communication](./communication)
 - [Delivery](./delivery)
 
 <br>
