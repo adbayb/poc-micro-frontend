@@ -3,7 +3,7 @@ import { Suspense, version } from "react";
 import { AbsenceView } from "absence/View";
 //@ts-expect-error @todo: provides type
 import { ExpenseView } from "expense/View";
-import { useSharedContext } from "@shared/context";
+import { useSharedContext } from "@composition-client/shared-context";
 
 export const App = () => {
 	const context = useSharedContext();

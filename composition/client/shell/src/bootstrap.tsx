@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import { StrictMode } from "react";
-import { SharedProvider } from "@shared/context";
+import { SharedProvider } from "@composition-client/shared-context";
 import { App } from "./App";
 
 ReactDOM.render(

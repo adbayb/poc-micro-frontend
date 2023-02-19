@@ -1,4 +1,4 @@
-import { SharedProvider } from "@shared/context";
+import { SharedProvider } from "@composition-client/shared-context";
 import { StrictMode } from "react";
 import { ExpenseView } from "./View";
 

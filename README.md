@@ -34,19 +34,22 @@ It should be used with caution because, as we've seen, it can come with some cha
 
 ## 👨‍🍳 How to implement it?
 
-As usual, it'll depend heavily on the operational context. Let's first start to define the main components involved in the architecture:
-
+Let's first start to define the main components involved in the architecture:
 *To review (draft)*
+- Shell: Micro-frontend orchestrator component (it can be found in the literature with the naming ["host container"](https://webpack.js.org/concepts/module-federation/#low-level-concepts)). Its responsibility is to welcome in the best possible conditions each micro frontend and compose/route them into a greater whole. It's a technical component only and must not contain any business logic.
+- Micro frontends: Self-contained modules with clear business boundaries and team ownership (also found as ["remote module"](https://webpack.js.org/concepts/module-federation/#low-level-concepts) naming). *Please note that, in code examples, micro frontends are included in the `modules` folder.*
 
-- Shell: The shell (or [container/host](https://webpack.js.org/concepts/module-federation/#low-level-concepts)) is the micro-frontend orchestrator component. Its responsibility is to welcome in the best possible conditions each micro frontend. It's a technical component only and must not contain any business logic.
-- Micro frontends: Self-contained modules (also [remote module](https://webpack.js.org/concepts/module-federation/#low-level-concepts)) consumed by the shell. It can have its own client-side routing and framework/libraries but can also share them with the shell/other modules.
+Going back to the initial question: as usual, it'll depend heavily on the operational context.
 
-Implementing the micro frontend architecture comes with different challenges from splitting a monolith to fragment composition or linking experiences together, ... Those challenges can be solved with the help of several recipes that act like a blueprint and are categorized by their intent. These recipes are what we call micro-frontend **patterns** and we've identified, at least, four main classifications that aim to address the implementation (ordered from the micro-frontend journey beginning to the end):
+Implementing the micro frontend architecture comes with different challenges from splitting a monolith to fragment composition or linking experiences together, ... Those challenges can be solved with the help of recipes that act like a blueprint and can be categorized by their intent. These recipes are, what we call, micro-frontend **patterns**.
+
+We've identified, at least, four main classifications that aim to address the implementation (ordered from the micro-frontend journey beginning to the end):
 
 - [Boundary](./boundary)
 - [Composition](./composition)
 - [Routing](./routing)
 - [Communication](./communication)
+- [Dependency](./dependency)
 - [Delivery](./delivery)
 
 <br>

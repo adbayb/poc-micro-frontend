@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { StrictMode } from "react";
-import { SharedProvider } from "@shared/context";
-import App from "./App";
+import { SharedProvider } from "@composition-build/shared-context";
+import { App } from "./App";
 
 ReactDOM.render(
 	<StrictMode>

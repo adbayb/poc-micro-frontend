@@ -15,7 +15,7 @@
 	"peerDependencies": {
 	  "react": "^16.14.0 || ^17.0.0",
 	  "react-dom": "^16.14.0 || ^17.0.0",
-	  "@shared/context": "workspace:^"
+	  "@composition-build/shared-context": "workspace:^"
 	},
 	"devDependencies": {
 		"@types/react": "17.0.36",

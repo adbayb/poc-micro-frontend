@@ -1,4 +1,4 @@
-import { useSharedContext } from "@shared/context";
+import { useSharedContext } from "@composition-build/shared-context";
 
 export const Expense = () => {
 	const context = useSharedContext();

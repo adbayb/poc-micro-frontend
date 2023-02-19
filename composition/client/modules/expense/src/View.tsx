@@ -1,5 +1,5 @@
 import { version } from "react";
-import { useSharedContext } from "@shared/context";
+import { useSharedContext } from "@composition-client/shared-context";
 
 export const ExpenseView = () => {
 	const context = useSharedContext();

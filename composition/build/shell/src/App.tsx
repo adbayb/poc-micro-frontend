@@ -1,9 +1,9 @@
 import React from "react";
-import { Absence } from "module-absence";
-import { Expense } from "module-expense";
-import { useSharedContext } from "@shared/context";
+import { Absence } from "@composition-build/micro-frontend-absence";
+import { Expense } from "@composition-build/micro-frontend-expense";
+import { useSharedContext } from "@composition-build/shared-context";
 
-const App = () => {
+export const App = () => {
 	const context = useSharedContext();
 
 	return (
@@ -19,5 +19,3 @@ const App = () => {
 		</main>
 	);
 };
-
-export default App;
