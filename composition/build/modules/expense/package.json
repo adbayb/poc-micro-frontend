@@ -1,5 +1,5 @@
 {
-	"name": "module-expense",
+	"name": "@composition-build/micro-frontend-expense",
 	"version": "0.0.0",
 	"private": true,
 	"source": "src/index.ts",
@@ -23,6 +23,6 @@
 		"typescript": "4.6.3",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
-		"@shared/context": "workspace:*"
+		"@composition-build/shared-context": "workspace:*"
 	}
 }

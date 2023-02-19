@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "@composition/client",
+	"name": "monorepo-micro-frontend",
 	"version": "0.0.0",
 	"author": {
 		"name": "Ayoub Adib",
@@ -9,7 +9,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:adbayb/poc-module-federation.git"
+		"url": "git@github.com:adbayb/poc-micro-frontend.git"
 	},
 	"license": "MIT",
 	"scripts": {
@@ -19,7 +19,9 @@
 		"test": "turbo run test",
 		"start": "turbo run start",
 		"build": "turbo run build",
-		"watch": "turbo run watch"
+		"watch": "turbo run watch",
+		"start:composition-build": "turbo run start --filter=@composition-build/*",
+		"start:composition-client": "turbo run start --filter=@composition-client/*"
 	},
 	"prettier": "@adbayb/prettier-config",
 	"eslintConfig": {
@@ -33,6 +35,7 @@
 		"eslint": "8.13.0",
 		"prettier": "2.6.2",
 		"turbo": "1.2.1",
-		"typescript": "4.6.3"
+		"typescript": "4.6.3",
+		"vitest": "0.28.5"
 	}
 }

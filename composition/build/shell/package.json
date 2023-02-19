@@ -1,5 +1,5 @@
 {
-	"name": "shell",
+	"name": "@composition-build/shell",
 	"version": "0.0.0",
 	"private": true,
 	"source": "src/index.tsx",
@@ -15,8 +15,8 @@
 	"dependencies": {
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
-		"@shared/context": "workspace:*",
-		"module-absence": "workspace:*",
-		"module-expense": "workspace:*"
+		"@composition-build/shared-context": "workspace:*",
+		"@composition-build/micro-frontend-absence": "workspace:*",
+		"@composition-build/micro-frontend-expense": "workspace:*"
 	}
 }
