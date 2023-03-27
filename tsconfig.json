@@ -3,6 +3,8 @@
 	"compilerOptions": {
 		// @todo: update @adbayb/ts-config (test with Common-js like module)
 		"module": "ESNext",
-		"moduleResolution": "node"
+		"moduleResolution": "node",
+		"allowJs": false,
+		"checkJs": false
 	}
 }
