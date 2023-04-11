@@ -1,11 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { App } from "./App";
+import { Shell } from "./Shell";
 
-const root = createRoot(document.getElementById("root")!);
+const rootElement = document.getElementById("root");
 
-root.render(
-	<StrictMode>
-		<App />
-	</StrictMode>
-);
+if (rootElement) {
+	const root = createRoot(rootElement);
+
+	root.render(
+		<StrictMode>
+			<Shell />
+		</StrictMode>
+	);
+}

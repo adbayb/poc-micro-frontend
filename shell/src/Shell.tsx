@@ -1,11 +1,9 @@
 import { Suspense, version } from "react";
 //@ts-expect-error @todo: provides type
-import { AbsenceView } from "absence/View";
-//@ts-expect-error @todo: provides type
-import { ExpenseView } from "expense/View";
+import { MicroFrontend as ExpenseMicroFrontend } from "expense/all";
 import { Box, Text } from "@foundation/design-system";
 
-export const App = () => {
+export const Shell = () => {
 	return (
 		<Box as="main">
 			<Box as="h1">Shell</Box>
@@ -16,8 +14,7 @@ export const App = () => {
 					gap={16}
 					flexWrap="wrap"
 				>
-					<AbsenceView />
-					<ExpenseView />
+					<ExpenseMicroFrontend />
 				</Box>
 			</Suspense>
 		</Box>

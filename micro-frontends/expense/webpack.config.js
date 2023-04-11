@@ -14,6 +14,7 @@ module.exports = {
 		port: 3002,
 		hot: true,
 		liveReload: true,
+		open: true,
 	},
 	output: {
 		/**
@@ -53,7 +54,7 @@ module.exports = {
 			 * It allows to reference more easily in the shell configuration instead of resolving it by its publicPath
 			 * (ie. via `remotes: "expense"` instead of `remotes: { expense: "expense@http://localhost:3001/remoteEntry.js" }`)
 			 */
-			library: { type: "var", name: "expense" },
+			// library: { type: "var", name: "expense" },
 			/**
 			 * The filename of the MFE entrypoint relative to the `output.path` directory.
 			 * This entrypoint is a tiny mapping for webpack to let it resolve and download asynchronously imported modules and chunks specified in the mapping.
@@ -73,11 +74,12 @@ module.exports = {
 			 * => `import { View } from "expense/View"`
 			 */
 			exposes: {
-				"./View": "./src/View",
+				"./all": "./src/MicroFrontend.tsx",
 			},
 			shared: [
 				...Object.keys(pkgDependencies),
 				"react/jsx-runtime",
+				"react-dom/client",
 			].reduce((shared, moduleName) => {
 				shared[moduleName] = {
 					/**

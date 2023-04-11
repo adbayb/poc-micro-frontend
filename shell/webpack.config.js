@@ -38,16 +38,18 @@ module.exports = {
 		 */
 		new ModuleFederationPlugin({
 			name: "shell",
-			library: { type: "var", name: "shell" },
 			/**
 			 * Consume remote (micro frontend) modules.
 			 * Please note that the shell can be at the same time a host and a remote module
 			 * so we can have both the `remotes` and `exposes` configuration fields.
 			 */
-			remotes: ["absence", "expense"],
+			remotes: {
+				expense: "expense@http://localhost:3002/remoteEntry.js",
+			},
 			shared: [
 				...Object.keys(pkgDependencies),
 				"react/jsx-runtime",
+				"react-dom/client",
 			].reduce((shared, name) => {
 				shared[name] = {
 					/**
