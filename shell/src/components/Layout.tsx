@@ -13,8 +13,8 @@ export const Layout = ({ headerSlot, footerSlot, appSlot }: LayoutProps) => {
 			display="flex"
 			width="100%"
 			flexDirection="column"
-			height={900}
 			minHeight="100%"
+			backgroundColor="gray.50"
 		>
 			<Box>{headerSlot}</Box>
 			<Box

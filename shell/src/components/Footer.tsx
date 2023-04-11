@@ -11,7 +11,7 @@ export const Footer = () => {
 			alignItems="center"
 			justifyContent="center"
 			gap={8}
-			padding={16}
+			padding={8}
 			marginTop="auto"
 		>
 			Footer content

@@ -30,8 +30,8 @@ The example includes the following components:
 ```mermaid
 flowchart TD
     S(Shell):::strokeWidth -- Shares --> D("Dependencies"):::strokeWidth
-    S -- Orchestrates --> ML("@micro-frontend/absence"):::strokeWidth
-    S -- Orchestrates --> MD("@micro-frontend/expense"):::strokeWidth
+    S -- Orchestrates --> ML("@micro-frontend/authentication"):::strokeWidth
+    S -- Orchestrates --> MD("@micro-frontend/classifieds"):::strokeWidth
     ML -- Uses --> D
     MD -- Uses --> D
     style S fill:#ffe5ec,stroke:#ff8fab

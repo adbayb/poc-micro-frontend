@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
-import { MicroFrontend } from "./MicroFrontend";
+import { ChakraProvider } from "@foundation/design-system";
+import { App } from "..";
 
 const rootElement = document.getElementById("root");
 
@@ -9,7 +10,9 @@ if (rootElement) {
 
 	root.render(
 		<StrictMode>
-			<MicroFrontend />
+			<ChakraProvider>
+				<App />
+			</ChakraProvider>
 		</StrictMode>
 	);
 }

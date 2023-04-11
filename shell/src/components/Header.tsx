@@ -11,12 +11,11 @@ export const Header = ({ links }: HeaderProps) => {
 			as="header"
 			display="flex"
 			width="100%"
-			height={100}
 			backgroundColor="white"
 			alignItems="center"
-			boxShadow="0 0 5px 3px rgba(0,0,0,0.2)"
+			boxShadow="md"
 			gap={8}
-			padding={36}
+			padding={8}
 			justifyContent="space-between"
 		>
 			<Box

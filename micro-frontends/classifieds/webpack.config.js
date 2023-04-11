@@ -4,7 +4,7 @@ const path = require("path");
 const pkgDependencies = require("./package.json").dependencies;
 
 module.exports = {
-	entry: "./src/index.ts",
+	entry: "./src/sandbox",
 	/**
 	 * Dev server configuration to serve MFE during development.
 	 * In production, the assets will be ideally served from a CDN.
@@ -48,13 +48,13 @@ module.exports = {
 			/**
 			 * The name of the micro frontend container (has no repercussion on the way MFE is served: dummy field?)
 			 */
-			name: "expense",
+			name: "classifieds",
 			/**
-			 * Var library type allows to assign the output of the MFE build into the variable `expense`.
+			 * Var library type allows to assign the output of the MFE build into the variable `classifieds`.
 			 * It allows to reference more easily in the shell configuration instead of resolving it by its publicPath
-			 * (ie. via `remotes: "expense"` instead of `remotes: { expense: "expense@http://localhost:3001/remoteEntry.js" }`)
+			 * (ie. via `remotes: "classifieds"` instead of `remotes: { classifieds: "classifieds@http://localhost:3001/remoteEntry.js" }`)
 			 */
-			// library: { type: "var", name: "expense" },
+			// library: { type: "var", name: "classifieds" },
 			/**
 			 * The filename of the MFE entrypoint relative to the `output.path` directory.
 			 * This entrypoint is a tiny mapping for webpack to let it resolve and download asynchronously imported modules and chunks specified in the mapping.
@@ -71,10 +71,10 @@ module.exports = {
 			 * Each value is a relative path to the exposed module.
 			 * The key is used to consume the exposed module consumer side:
 			 * eg. `import { View } from "${library.name}/${key of exposes}"`
-			 * => `import { View } from "expense/View"`
+			 * => `import { View } from "classifieds/View"`
 			 */
 			exposes: {
-				"./all": "./src/MicroFrontend.tsx",
+				"./all": "./src/index.tsx",
 			},
 			shared: [
 				...Object.keys(pkgDependencies),

@@ -1,6 +1,6 @@
 {
 	"name": "@foundation/design-system",
-	"version": "1.0.0",
+	"version": "0.0.0",
 	"private": true,
 	"source": "./src/index.ts",
 	"main": "./dist/index.cjs",

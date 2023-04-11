@@ -1,6 +1,6 @@
 {
-	"name": "@micro-frontend/expense",
-	"version": "1.0.0",
+	"name": "@micro-frontend/classifieds",
+	"version": "0.0.0",
 	"private": true,
 	"scripts": {
 		"start": "webpack serve --mode development",
@@ -10,6 +10,6 @@
 	"dependencies": {
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"@foundation/design-system": "^1.0.0"
+		"@foundation/design-system": "^0.0.0"
 	}
 }
