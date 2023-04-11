@@ -1,22 +1,27 @@
-import { Suspense, version } from "react";
+import { Suspense } from "react";
 //@ts-expect-error @todo: provides type
 import { MicroFrontend as ExpenseMicroFrontend } from "expense/all";
-import { Box, Text } from "@foundation/design-system";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { Layout } from "./components/Layout";
 
 export const Shell = () => {
 	return (
-		<Box as="main">
-			<Box as="h1">Shell</Box>
-			<Text>React version = {version}</Text>
-			<Suspense fallback="Loading modules...">
-				<Box
-					display="flex"
-					gap={16}
-					flexWrap="wrap"
-				>
+		<Layout
+			headerSlot={
+				<Header
+					links={[
+						{ label: "Home", href: "/" },
+						{ label: "Account", href: "/account" },
+					]}
+				/>
+			}
+			appSlot={
+				<Suspense fallback="Loading modules...">
 					<ExpenseMicroFrontend />
-				</Box>
-			</Suspense>
-		</Box>
+				</Suspense>
+			}
+			footerSlot={<Footer />}
+		/>
 	);
 };
