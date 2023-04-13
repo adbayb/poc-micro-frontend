@@ -11,7 +11,7 @@ module.exports = {
 	 */
 	devServer: {
 		static: path.join(__dirname, "dist"),
-		port: 3002,
+		port: 3001,
 		hot: true,
 		liveReload: true,
 		open: true,
@@ -22,7 +22,7 @@ module.exports = {
 		 * The public path should be configured per environment (can be statically via
 		 * different webpack config or dynamically (at runtime) via https://scriptedalchemy.medium.com/micro-fe-architecture-webpack-5-module-federation-and-custom-startup-code-9cb3fcd066c)
 		 */
-		publicPath: "http://localhost:3002/",
+		publicPath: "http://localhost:3001/",
 	},
 	resolve: {
 		extensions: [".ts", ".tsx", ".js"],

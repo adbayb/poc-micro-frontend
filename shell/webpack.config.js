@@ -44,7 +44,7 @@ module.exports = {
 			 * so we can have both the `remotes` and `exposes` configuration fields.
 			 */
 			remotes: {
-				classifieds: "classifieds@http://localhost:3002/remoteEntry.js",
+				classifieds: "classifieds@http://localhost:3001/remoteEntry.js",
 			},
 			shared: [
 				...Object.keys(pkgDependencies),

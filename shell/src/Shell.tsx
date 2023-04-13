@@ -2,6 +2,7 @@ import { Suspense } from "react";
 //@ts-expect-error @todo: provides type
 import { App as ExpenseApp } from "classifieds/all";
 import { ChakraProvider } from "@foundation/design-system";
+// import { BrowserRouter as Router } from "@foundation/router";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Layout } from "./components/Layout";

@@ -1,0 +1,21 @@
+{
+	"name": "@foundation/router",
+	"version": "0.0.0",
+	"private": true,
+	"source": "./src/index.ts",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"sideEffects": false,
+	"scripts": {
+		"build": "quickbundle build",
+		"watch": "quickbundle watch"
+	},
+	"peerDependencies": {
+		"react": "^17.0.0 || ^18.0.0",
+		"react-dom": "^17.0.0 || ^18.0.0"
+	},
+	"dependencies": {
+        "react-router-dom": "^6.10.0"
+	}
+}
