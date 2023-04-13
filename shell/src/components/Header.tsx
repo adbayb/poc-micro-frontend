@@ -1,4 +1,5 @@
-import { Box, Link, Text } from "@foundation/design-system";
+import { Box, Text } from "@foundation/design-system";
+import { Link } from "@foundation/router";
 import { version } from "react";
 
 interface HeaderProps {
@@ -26,8 +27,8 @@ export const Header = ({ links }: HeaderProps) => {
 					return (
 						<Link
 							key={href}
-							href={href}
-							fontSize={16}
+							to={href}
+							// fontSize={16}
 						>
 							{label}
 						</Link>

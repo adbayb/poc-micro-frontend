@@ -16,9 +16,9 @@
 		"react-dom": "^17.0.0 || ^18.0.0"
 	},
 	"dependencies": {
-		"@chakra-ui/react": "2.5.5",
-		"@emotion/react": "11.10.6",
-		"@emotion/styled": "11.10.6",
-		"framer-motion": "10.10.0"
+		"@chakra-ui/react": "^2.5.5",
+		"@emotion/react": "^11.10.6",
+		"@emotion/styled": "^11.10.6",
+		"framer-motion": "^10.10.0"
 	}
 }

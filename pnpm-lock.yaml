@@ -74,16 +74,16 @@ importers:
   dependencies/design-system:
     dependencies:
       '@chakra-ui/react':
-        specifier: 2.5.5
+        specifier: ^2.5.5
         version: 2.5.5(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.31)(framer-motion@10.10.0)(react-dom@18.2.0)(react@18.2.0)
       '@emotion/react':
-        specifier: 11.10.6
+        specifier: ^11.10.6
         version: 11.10.6(@types/react@18.0.31)(react@18.2.0)
       '@emotion/styled':
-        specifier: 11.10.6
+        specifier: ^11.10.6
         version: 11.10.6(@emotion/react@11.10.6)(@types/react@18.0.31)(react@18.2.0)
       framer-motion:
-        specifier: 10.10.0
+        specifier: ^10.10.0
         version: 10.10.0(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^17.0.0 || ^18.0.0

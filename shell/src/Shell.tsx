@@ -1,32 +1,47 @@
-import { Suspense } from "react";
-//@ts-expect-error @todo: provides type
-import { App as ExpenseApp } from "classifieds/all";
 import { ChakraProvider } from "@foundation/design-system";
-// import { BrowserRouter as Router } from "@foundation/router";
+import { Route, BrowserRouter as Router, Routes } from "@foundation/router";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Layout } from "./components/Layout";
+import { createMicroFrontend } from "./components/MicroFrontend";
+
+const ExpenseApp = createMicroFrontend(async () => {
+	//@ts-expect-error @todo: provides types
+	return (await import("classifieds/all")).App;
+});
+
+const Account = () => {
+	return <>Account</>;
+};
 
 export const Shell = () => {
 	return (
 		<ChakraProvider>
-			<Layout
-				headerSlot={
-					<Header
-						links={[
-							{ label: "Home", href: "/" },
-							{ label: "Account", href: "/account" },
-						]}
-					/>
-				}
-				appSlot={
-					// @todo: MicroFrontend loader (for discovery purposes)
-					<Suspense fallback="Loading modules...">
-						<ExpenseApp />
-					</Suspense>
-				}
-				footerSlot={<Footer />}
-			/>
+			<Router>
+				<Layout
+					headerSlot={
+						<Header
+							links={[
+								{ label: "Home", href: "/" },
+								{ label: "Account", href: "/account" },
+							]}
+						/>
+					}
+					appSlot={
+						<Routes>
+							<Route
+								index
+								element={<ExpenseApp />}
+							/>
+							<Route
+								path="/account/*"
+								element={<Account />}
+							/>
+						</Routes>
+					}
+					footerSlot={<Footer />}
+				/>
+			</Router>
 		</ChakraProvider>
 	);
 };
